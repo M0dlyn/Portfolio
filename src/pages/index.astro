@@ -28,9 +28,9 @@ import { Code2, Type, FileText, Palette, Globe, Zap, Rocket, Circle, Hash, Coffe
 	<body>
 		<header class="fixed inset-x-0 top-0 z-50 backdrop-blur supports-backdrop-filter:bg-black/40">
 			<nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-				<a href="#hero" class="font-semibold tracking-tight">Mateusz Samborski</a>
-				<div class="flex items-center gap-6">
-					<ul class="flex gap-6 text-sm">
+				<a href="#hero" class="font-semibold tracking-tight text-lg sm:text-xl">Mateusz Samborski</a>
+				<div class="flex items-center gap-4">
+					<ul class="hidden md:flex gap-6 text-sm">
 						<li><a href="#about" class="opacity-80 hover:opacity-100 transition-opacity" data-en="About" data-pl="O mnie">About</a></li>
 						<li><a href="#skills" class="opacity-80 hover:opacity-100 transition-opacity" data-en="Skills" data-pl="Umiejętności">Skills</a></li>
 						<li><a href="#showcase" class="opacity-80 hover:opacity-100 transition-opacity" data-en="Showcase" data-pl="Prace">Showcase</a></li>
@@ -39,25 +39,42 @@ import { Code2, Type, FileText, Palette, Globe, Zap, Rocket, Circle, Hash, Coffe
 						<li><a href="#contact" class="opacity-80 hover:opacity-100 transition-opacity" data-en="Contact" data-pl="Kontakt">Contact</a></li>
 					</ul>
 					<div class="flex items-center bg-white/10 rounded-lg p-1">
-						<button id="lang-en" class="text-sm px-3 py-1.5 rounded-md transition-all duration-200 bg-white/20 text-white font-medium" data-lang="en">EN</button>
-						<button id="lang-pl" class="text-sm px-3 py-1.5 rounded-md transition-all duration-200 text-white/60 hover:text-white" data-lang="pl">PL</button>
+						<button id="lang-en" class="text-xs sm:text-sm px-2 sm:px-3 py-1.5 rounded-md transition-all duration-200 bg-white/20 text-white font-medium" data-lang="en">EN</button>
+						<button id="lang-pl" class="text-xs sm:text-sm px-2 sm:px-3 py-1.5 rounded-md transition-all duration-200 text-white/60 hover:text-white" data-lang="pl">PL</button>
 					</div>
+					<!-- Mobile menu button -->
+					<button id="mobile-menu-btn" class="md:hidden p-2 text-white/80 hover:text-white transition-colors">
+						<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+						</svg>
+					</button>
 				</div>
 			</nav>
+			<!-- Mobile menu -->
+			<div id="mobile-menu" class="md:hidden bg-black/95 backdrop-blur-sm border-t border-white/10 hidden">
+				<div class="px-4 py-6 space-y-4">
+					<a href="#about" class="block text-white/80 hover:text-white transition-colors py-2" data-en="About" data-pl="O mnie">About</a>
+					<a href="#skills" class="block text-white/80 hover:text-white transition-colors py-2" data-en="Skills" data-pl="Umiejętności">Skills</a>
+					<a href="#showcase" class="block text-white/80 hover:text-white transition-colors py-2" data-en="Showcase" data-pl="Prace">Showcase</a>
+					<a href="#experience" class="block text-white/80 hover:text-white transition-colors py-2" data-en="Experience" data-pl="Doświadczenie">Experience</a>
+					<a href="#projects" class="block text-white/80 hover:text-white transition-colors py-2" data-en="Projects" data-pl="Projekty">Projects</a>
+					<a href="#contact" class="block text-white/80 hover:text-white transition-colors py-2" data-en="Contact" data-pl="Kontakt">Contact</a>
+				</div>
+			</div>
 		</header>
 
 		<main class="mx-auto max-w-6xl px-4">
-			<section id="hero" class="min-h-screen grid place-items-center pt-24">
-				<div class="reveal space-y-6 text-center">
-					<p class="text-sm uppercase tracking-[0.3em] text-white/60">Junior Full‑Stack Developer</p>
-					<h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold leading-tight">
+			<section id="hero" class="min-h-screen grid place-items-center pt-24 pb-12">
+				<div class="reveal space-y-4 sm:space-y-6 text-center px-4">
+					<p class="text-xs sm:text-sm uppercase tracking-[0.3em] text-white/60">Junior Full‑Stack Developer</p>
+					<h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
 						Mateusz Samborski
 						<span class="block bg-linear-to-r from-indigo-400 via-sky-400 to-emerald-400 bg-clip-text text-transparent">Frontend / Full‑Stack</span>
 					</h1>
-					<p class="mx-auto max-w-2xl text-white/70">Practical experience across React, TypeScript, Tailwind CSS, and Laravel/C# ecosystems. I enjoy building usable, performant UIs and clean, scalable systems.</p>
-					<div class="flex items-center justify-center gap-3">
-						<a href="#projects" class="btn-primary">View Projects</a>
-						<a href="#contact" class="btn-ghost">Get in touch</a>
+					<p class="mx-auto max-w-2xl text-sm sm:text-base text-white/70 px-4">Practical experience across React, TypeScript, Tailwind CSS, and Laravel/C# ecosystems. I enjoy building usable, performant UIs and clean, scalable systems.</p>
+					<div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-4">
+						<a href="#projects" class="btn-primary w-full sm:w-auto">View Projects</a>
+						<a href="#contact" class="btn-ghost w-full sm:w-auto">Get in touch</a>
 					</div>
 
 				</div>
@@ -66,13 +83,13 @@ import { Code2, Type, FileText, Palette, Globe, Zap, Rocket, Circle, Hash, Coffe
 			<section id="about" class="section">
 				<div class="reveal">
 					<h2 class="section-title">About</h2>
-					<div class="flex gap-8 items-start mt-8">
-						<div class="flex-1">
+					<div class="flex flex-col md:flex-row gap-8 items-start mt-8">
+						<div class="flex-1 order-2 md:order-1">
 							<p class="section-lead">I'm a software developer with hands‑on experience in full‑stack development, automation, and user‑centered design. I love turning complex problems into elegant solutions and believe great software comes from understanding both the technical and human sides of development. When I'm not coding, you'll find me exploring new technologies, working on my fantasy worldbuilding or getting lost in search of a perfect afternoon indie track :)</p>
 							<ul class="mt-4 grid gap-2 text-white/80">
 							</ul>
 						</div>
-						<div class="relative aspect-square rounded-2xl overflow-hidden ring-1 ring-white/10 w-64 flex-shrink-0">
+						<div class="relative aspect-square rounded-2xl overflow-hidden ring-1 ring-white/10 w-48 sm:w-56 md:w-64 flex-shrink-0 mx-auto md:mx-0 order-1 md:order-2">
 							<img src="/Me.png" alt="Mateusz" class="w-full h-full object-cover" onerror="this.src='/placeholder-user.jpg'" />
 							<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
 						</div>
@@ -650,6 +667,22 @@ import { Code2, Type, FileText, Palette, Globe, Zap, Rocket, Circle, Hash, Coffe
 			
 			// Initialize with English as default
 			updateLanguage('en');
+			
+			// Mobile menu functionality
+			const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+			const mobileMenu = document.getElementById('mobile-menu');
+			
+			mobileMenuBtn.addEventListener('click', () => {
+				mobileMenu.classList.toggle('hidden');
+			});
+			
+			// Close mobile menu when clicking on a link
+			const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+			mobileMenuLinks.forEach(link => {
+				link.addEventListener('click', () => {
+					mobileMenu.classList.add('hidden');
+				});
+			});
 		</script>
 
 		<!-- CV Download Modal -->
