@@ -1,0 +1,679 @@
+---
+import "../styles/global.css";
+import { Code2, Type, FileText, Palette, Globe, Zap, Rocket, Circle, Hash, Coffee, Database, GitBranch, Workflow, Container, Server, Cpu, Target, Leaf } from 'lucide-react';
+---
+
+
+<html lang="en" class="scroll-smooth bg-black text-white">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/ms-initials-favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Mateusz Samborski • Portfolio</title>
+		<meta name="description" content="Junior full‑stack developer specializing in React, TypeScript, Tailwind CSS, and modern web tooling. Passionate about usable, performant interfaces and clean architecture." />
+		<link rel="canonical" href="https://msamborski.dev/" />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Mateusz Samborski • Portfolio" />
+		<meta property="og:description" content="Junior full‑stack developer specializing in React, TypeScript, Tailwind CSS, and modern web tooling." />
+		<meta property="og:url" content="https://msamborski.dev/" />
+		<meta property="og:image" content="/favicon.svg" />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Mateusz Samborski • Portfolio" />
+		<meta name="twitter:description" content="Junior full‑stack developer specializing in React, TypeScript, Tailwind CSS, and modern web tooling." />
+		<meta name="twitter:image" content="/favicon.svg" />
+	</head>
+	<body>
+		<header class="fixed inset-x-0 top-0 z-50 backdrop-blur supports-backdrop-filter:bg-black/40">
+			<nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+				<a href="#hero" class="font-semibold tracking-tight">Mateusz Samborski</a>
+				<div class="flex items-center gap-6">
+					<ul class="flex gap-6 text-sm">
+						<li><a href="#about" class="opacity-80 hover:opacity-100 transition-opacity" data-en="About" data-pl="O mnie">About</a></li>
+						<li><a href="#skills" class="opacity-80 hover:opacity-100 transition-opacity" data-en="Skills" data-pl="Umiejętności">Skills</a></li>
+						<li><a href="#showcase" class="opacity-80 hover:opacity-100 transition-opacity" data-en="Showcase" data-pl="Prace">Showcase</a></li>
+						<li><a href="#experience" class="opacity-80 hover:opacity-100 transition-opacity" data-en="Experience" data-pl="Doświadczenie">Experience</a></li>
+						<li><a href="#projects" class="opacity-80 hover:opacity-100 transition-opacity" data-en="Projects" data-pl="Projekty">Projects</a></li>
+						<li><a href="#contact" class="opacity-80 hover:opacity-100 transition-opacity" data-en="Contact" data-pl="Kontakt">Contact</a></li>
+					</ul>
+					<div class="flex items-center bg-white/10 rounded-lg p-1">
+						<button id="lang-en" class="text-sm px-3 py-1.5 rounded-md transition-all duration-200 bg-white/20 text-white font-medium" data-lang="en">EN</button>
+						<button id="lang-pl" class="text-sm px-3 py-1.5 rounded-md transition-all duration-200 text-white/60 hover:text-white" data-lang="pl">PL</button>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<main class="mx-auto max-w-6xl px-4">
+			<section id="hero" class="min-h-screen grid place-items-center pt-24">
+				<div class="reveal space-y-6 text-center">
+					<p class="text-sm uppercase tracking-[0.3em] text-white/60">Junior Full‑Stack Developer</p>
+					<h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold leading-tight">
+						Mateusz Samborski
+						<span class="block bg-linear-to-r from-indigo-400 via-sky-400 to-emerald-400 bg-clip-text text-transparent">Frontend / Full‑Stack</span>
+					</h1>
+					<p class="mx-auto max-w-2xl text-white/70">Practical experience across React, TypeScript, Tailwind CSS, and Laravel/C# ecosystems. I enjoy building usable, performant UIs and clean, scalable systems.</p>
+					<div class="flex items-center justify-center gap-3">
+						<a href="#projects" class="btn-primary">View Projects</a>
+						<a href="#contact" class="btn-ghost">Get in touch</a>
+					</div>
+
+				</div>
+			</section>
+
+			<section id="about" class="section">
+				<div class="reveal">
+					<h2 class="section-title">About</h2>
+					<div class="flex gap-8 items-start mt-8">
+						<div class="flex-1">
+							<p class="section-lead">I'm a software developer with hands‑on experience in full‑stack development, automation, and user‑centered design. I love turning complex problems into elegant solutions and believe great software comes from understanding both the technical and human sides of development. When I'm not coding, you'll find me exploring new technologies, working on my fantasy worldbuilding or getting lost in search of a perfect afternoon indie track :)</p>
+							<ul class="mt-4 grid gap-2 text-white/80">
+							</ul>
+						</div>
+						<div class="relative aspect-square rounded-2xl overflow-hidden ring-1 ring-white/10 w-64 flex-shrink-0">
+							<img src="/Me.png" alt="Mateusz" class="w-full h-full object-cover" onerror="this.src='/placeholder-user.jpg'" />
+							<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="skills" class="section">
+				<h2 class="section-title reveal">Skills</h2>
+				<p class="section-lead reveal">Technologies I use regularly and tools I'm comfortable with.</p>
+				<div class="reveal mt-10">
+					<div class="tech-carousel">
+						<div class="tech-carousel-track">
+							{["React","TypeScript","JavaScript","TailwindCSS","HTML/CSS","Vite","Astro","Blazor","C#","Java","Laravel PHP","Python","C","Git","GitHub Actions","Docker","PostgreSQL","MySQL","Rust","Svelte","MongoDB","Scala"].map((tech) => (
+								<div class="tech-item">
+									<div class="tech-icon">
+										{tech === "React" && <Code2 className="w-6 h-6 text-blue-400" />}
+										{tech === "TypeScript" && <Type className="w-6 h-6 text-blue-600" />}
+										{tech === "JavaScript" && <FileText className="w-6 h-6 text-yellow-400" />}
+										{tech === "TailwindCSS" && <Palette className="w-6 h-6 text-cyan-400" />}
+										{tech === "HTML/CSS" && <Globe className="w-6 h-6 text-orange-500" />}
+										{tech === "Vite" && <Zap className="w-6 h-6 text-purple-500" />}
+										{tech === "Astro" && <Rocket className="w-6 h-6 text-orange-400" />}
+										{tech === "Blazor" && <Circle className="w-6 h-6 text-blue-500" />}
+										{tech === "C#" && <Hash className="w-6 h-6 text-purple-600" />}
+										{tech === "Java" && <Coffee className="w-6 h-6 text-red-500" />}
+										{tech === "Laravel PHP" && <Circle className="w-6 h-6 text-red-600" />}
+										{tech === "Python" && <FileText className="w-6 h-6 text-blue-500" />}
+										{tech === "C" && <Code2 className="w-6 h-6 text-blue-600" />}
+										{tech === "Git" && <GitBranch className="w-6 h-6 text-orange-500" />}
+										{tech === "GitHub Actions" && <Workflow className="w-6 h-6 text-gray-400" />}
+										{tech === "Docker" && <Container className="w-6 h-6 text-blue-500" />}
+										{tech === "PostgreSQL" && <Database className="w-6 h-6 text-blue-600" />}
+										{tech === "MySQL" && <Database className="w-6 h-6 text-orange-500" />}
+										{tech === "Rust" && <Cpu className="w-6 h-6 text-orange-600" />}
+										{tech === "Svelte" && <Target className="w-6 h-6 text-orange-500" />}
+										{tech === "MongoDB" && <Leaf className="w-6 h-6 text-green-500" />}
+										{tech === "Scala" && <Server className="w-6 h-6 text-red-500" />}
+									</div>
+									<span class="text-xs text-white/80">{tech}</span>
+								</div>
+							))}
+							{/* Duplicate for seamless loop */}
+							{["React","TypeScript","JavaScript","TailwindCSS","HTML/CSS","Vite","Astro","Blazor","C#","Java","Laravel PHP","Python","C","Git","GitHub Actions","Docker","PostgreSQL","MySQL","Rust","Svelte","MongoDB","Scala"].map((tech) => (
+								<div class="tech-item">
+									<div class="tech-icon">
+										{tech === "React" && <Code2 className="w-6 h-6 text-blue-400" />}
+										{tech === "TypeScript" && <Type className="w-6 h-6 text-blue-600" />}
+										{tech === "JavaScript" && <FileText className="w-6 h-6 text-yellow-400" />}
+										{tech === "TailwindCSS" && <Palette className="w-6 h-6 text-cyan-400" />}
+										{tech === "HTML/CSS" && <Globe className="w-6 h-6 text-orange-500" />}
+										{tech === "Vite" && <Zap className="w-6 h-6 text-purple-500" />}
+										{tech === "Astro" && <Rocket className="w-6 h-6 text-orange-400" />}
+										{tech === "Blazor" && <Circle className="w-6 h-6 text-blue-500" />}
+										{tech === "C#" && <Hash className="w-6 h-6 text-purple-600" />}
+										{tech === "Java" && <Coffee className="w-6 h-6 text-red-500" />}
+										{tech === "Laravel PHP" && <Circle className="w-6 h-6 text-red-600" />}
+										{tech === "Python" && <FileText className="w-6 h-6 text-blue-500" />}
+										{tech === "C" && <Code2 className="w-6 h-6 text-blue-600" />}
+										{tech === "Git" && <GitBranch className="w-6 h-6 text-orange-500" />}
+										{tech === "GitHub Actions" && <Workflow className="w-6 h-6 text-gray-400" />}
+										{tech === "Docker" && <Container className="w-6 h-6 text-blue-500" />}
+										{tech === "PostgreSQL" && <Database className="w-6 h-6 text-blue-600" />}
+										{tech === "MySQL" && <Database className="w-6 h-6 text-orange-500" />}
+										{tech === "Rust" && <Cpu className="w-6 h-6 text-orange-600" />}
+										{tech === "Svelte" && <Target className="w-6 h-6 text-orange-500" />}
+										{tech === "MongoDB" && <Leaf className="w-6 h-6 text-green-500" />}
+										{tech === "Scala" && <Server className="w-6 h-6 text-red-500" />}
+									</div>
+									<span class="text-xs text-white/80">{tech}</span>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Sideways Scrolling Section -->
+			<section id="showcase" class="sideways-scroll-wrapper">
+				<div class="sideways-scroll-spacer"></div>
+				<div class="sideways-scroll-container">
+					<div class="sideways-content" id="sideways-content">
+						<div class="sideways-panel">
+							<div class="avant-garde">
+								<h2 class="text-4xl font-bold mb-4 glitch-text" data-text="CREATIVE">CREATIVE</h2>
+								<p class="text-white/80 max-w-md">Exploring the intersection of technology and art through innovative web experiences.</p>
+								<div class="floating-orb w-20 h-20 top-10 left-10"></div>
+								<div class="floating-orb w-16 h-16 top-32 right-20"></div>
+								<div class="floating-orb w-12 h-12 bottom-20 left-1/3"></div>
+							</div>
+						</div>
+						<div class="sideways-panel">
+							<div class="avant-garde">
+								<h2 class="text-4xl font-bold mb-4 glitch-text" data-text="TECHNICAL">TECHNICAL</h2>
+								<p class="text-white/80 max-w-md">Building robust, scalable solutions with modern frameworks and clean architecture.</p>
+								<div class="morphing-shape w-32 h-32 top-16 left-16"></div>
+								<div class="morphing-shape w-24 h-24 bottom-16 right-16"></div>
+							</div>
+						</div>
+						<div class="sideways-panel">
+							<div class="avant-garde">
+								<h2 class="text-4xl font-bold mb-4 glitch-text" data-text="INNOVATIVE">INNOVATIVE</h2>
+								<p class="text-white/80 max-w-md">Pushing boundaries with experimental interfaces and cutting-edge technologies.</p>
+								<div class="floating-orb w-24 h-24 top-1/4 right-1/4"></div>
+								<div class="morphing-shape w-20 h-20 bottom-1/4 left-1/4"></div>
+							</div>
+						</div>
+						<div class="sideways-panel">
+							<div class="avant-garde">
+								<h2 class="text-4xl font-bold mb-4 glitch-text" data-text="FUTURE">FUTURE</h2>
+								<p class="text-white/80 max-w-md">Shaping tomorrow's digital landscape through thoughtful design and engineering.</p>
+								<div class="floating-orb w-28 h-28 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="experience" class="section">
+				<h2 class="section-title reveal">Experience</h2>
+				<div class="reveal mt-6 space-y-6">
+					<div class="timeline-item">
+						<div class="timeline-dot"></div>
+						<div>
+							<h3 class="font-semibold">Full‑Stack Developer Intern, TEMcompany</h3>
+							<p class="text-sm text-white/70">2025</p>
+							<p class="mt-2 text-white/80">Contributed to migrating a large‑scale desktop app from Windows Forms to Avalonia; helped modernize codebases and improve cross‑platform compatibility. Experience with C#, .NET, MVVM, Git, and Agile workflows.</p>
+						</div>
+					</div>
+					<div class="timeline-item">
+					</div>
+				</div>
+			</section>
+
+			<section id="projects" class="section">
+				<h2 class="section-title reveal">Projects</h2>
+				<div class="reveal mt-8 grid gap-4 sm:grid-cols-2">
+					<a href="#" class="card group avant-garde">
+						<div class="aspect-video rounded-xl bg-white/5 ring-1 ring-white/10 group-hover:ring-white/20 transition relative overflow-hidden">
+							<div class="floating-orb w-8 h-8 top-2 right-2"></div>
+							<div class="morphing-shape w-12 h-12 bottom-2 left-2"></div>
+						</div>
+						<div class="mt-3 flex items-center justify-between">
+							<h3 class="font-semibold">GrowMate — Smart Greenhouse Monitoring</h3>
+							<span class="text-xs text-white/60">React • TypeScript • Tailwind</span>
+						</div>
+						<p class="mt-2 text-white/80">Responsive dashboard for monitoring temperature, humidity, and soil data in real time. Built with React, TypeScript, Tailwind CSS, and CI/CD pipelines; integrated with RESTful APIs.</p>
+					</a>
+					<a href="#" class="card group avant-garde">
+						<div class="aspect-video rounded-xl bg-white/5 ring-1 ring-white/10 group-hover:ring-white/20 transition relative overflow-hidden">
+							<div class="floating-orb w-8 h-8 top-2 right-2"></div>
+							<div class="morphing-shape w-12 h-12 bottom-2 left-2"></div>
+						</div>
+						<div class="mt-3 flex items-center justify-between">
+							<h3 class="font-semibold">Koi — Local Network File Transfer (In Development)</h3>
+							<span class="text-xs text-white/60">Tauri • Rust • Svelte</span>
+						</div>
+						<p class="mt-2 text-white/80">Lightweight desktop app for secure, fast file transfers over local networks. Exploring local‑first architecture, privacy, and performance.</p>
+					</a>
+					<a href="#" class="card group avant-garde">
+						<div class="aspect-video rounded-xl bg-white/5 ring-1 ring-white/10 group-hover:ring-white/20 transition relative overflow-hidden">
+							<div class="floating-orb w-8 h-8 top-2 right-2"></div>
+							<div class="morphing-shape w-12 h-12 bottom-2 left-2"></div>
+						</div>
+						<div class="mt-3 flex items-center justify-between">
+							<h3 class="font-semibold">Electrikar — Eco‑Friendly Fleet Management</h3>
+							<span class="text-xs text-white/60">C# • Java • PostgreSQL</span>
+						</div>
+						<p class="mt-2 text-white/80">3‑tier system for managing electric vehicle fleets with dual‑server architecture, client interfaces, and reliable data flow.</p>
+					</a>
+					<a href="#" class="card group avant-garde">
+						<div class="aspect-video rounded-xl bg-white/5 ring-1 ring-white/10 group-hover:ring-white/20 transition relative overflow-hidden">
+							<div class="floating-orb w-8 h-8 top-2 right-2"></div>
+							<div class="morphing-shape w-12 h-12 bottom-2 left-2"></div>
+						</div>
+						<div class="mt-3 flex items-center justify-between">
+							<h3 class="font-semibold">Learn2Learn — Student Productivity Tracker</h3>
+							<span class="text-xs text-white/60">React • TypeScript • Laravel</span>
+						</div>
+						<p class="mt-2 text-white/80">Hackathon‑built full‑stack web app to help students organize notes and habits; designed with clean architecture with future AI‑driven insights.</p>
+					</a>
+				</div>
+			</section>
+
+			<section id="education" class="section">
+				<h2 class="section-title reveal">Education</h2>
+				<div class="reveal mt-6">
+					<p class="text-white/80"><span class="font-semibold">Software Technology Engineering (BEng)</span> — VIA University College, Denmark</p>
+					<p class="text-sm text-white/70">2023 — 2025, September</p>
+					<p class="mt-2 text-white/80">Focus: Full‑Stack Development, DevOps (CI/CD, Docker), Clean Architecture & SOLID, Data Structures & Algorithms, Databases (PostgreSQL/MySQL), and Introductory Machine Learning.</p>
+				</div>
+			</section>
+
+			<section id="languages" class="section">
+				<h2 class="section-title reveal">Languages</h2>
+				<ul class="reveal mt-4 grid gap-2 text-white/80 sm:grid-cols-3">
+					<li class="card">Polish — Native</li>
+					<li class="card">English — C1 (Fluent)</li>
+					<li class="card">Danish — Beginner (Learning)</li>
+				</ul>
+			</section>
+
+			<section id="hobbies" class="section">
+				<h2 class="section-title reveal">Hobbies</h2>
+				<p class="reveal section-lead">Photography, music, gaming, and writing — particularly worldbuilding for fantasy settings. Inspired by nature and architecture, which I emphasize in my writing.</p>
+			</section>
+
+			<section id="contact" class="section pb-24">
+				<div class="reveal text-center">
+					<h2 class="section-title">Let’s work together</h2>
+					<p class="section-lead">Open to opportunities. Feel free to reach out.</p>
+					<div class="mt-6 flex justify-center gap-3">
+						<a href="mailto:you@example.com" class="btn-primary">Email</a>
+						<button onclick="document.getElementById('cv-modal').showModal()" class="btn-ghost">Download CV</button>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="border-t border-white/10">
+			<div class="mx-auto max-w-6xl px-4 py-8 text-center text-sm text-white/60">
+				© {new Date().getFullYear()} Mateusz Samborski • Toruń, Poland • <a class="hover:underline" href="mailto:msamborski04@gmail.com">msamborski04@gmail.com</a>
+			</div>
+		</footer>
+
+		<script is:inline>
+			// Reveal on scroll
+			const observer = new IntersectionObserver((entries) => {
+				for (const entry of entries) {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('is-visible');
+						observer.unobserve(entry.target);
+					}
+				}
+			}, { threshold: 0.2 });
+			document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+			// Fullpane-style sideways scrolling
+			const sidewaysWrapper = document.getElementById('showcase');
+			const sidewaysContent = document.getElementById('sideways-content');
+			
+			if (sidewaysWrapper && sidewaysContent) {
+				const totalPanels = 4;
+				const scrollMultiplier = 2; // Scroll through 2 viewport heights to move 3 panels
+				
+				function updateSidewaysScroll() {
+					const rect = sidewaysWrapper.getBoundingClientRect();
+					const scrollProgress = -rect.top / (window.innerHeight * scrollMultiplier);
+					const clampedProgress = Math.max(0, Math.min(1, scrollProgress));
+					
+					// Translate from 0% to -300% (4 panels, moving 3 full widths)
+					const translateX = clampedProgress * 300;
+					sidewaysContent.style.transform = `translateX(-${translateX}%)`;
+				}
+				
+				let ticking = false;
+				window.addEventListener('scroll', () => {
+					if (!ticking) {
+						requestAnimationFrame(() => {
+							updateSidewaysScroll();
+							ticking = false;
+						});
+						ticking = true;
+					}
+				});
+				
+				// Initial update
+				updateSidewaysScroll();
+			}
+
+			// 3D mouse tracking for avant-garde elements
+			document.querySelectorAll('.avant-garde').forEach((element) => {
+				element.addEventListener('mousemove', (e) => {
+					const rect = element.getBoundingClientRect();
+					const x = e.clientX - rect.left;
+					const y = e.clientY - rect.top;
+					const centerX = rect.width / 2;
+					const centerY = rect.height / 2;
+					
+					const rotateX = (y - centerY) / 10;
+					const rotateY = (centerX - x) / 10;
+					
+					element.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(20px)`;
+				});
+				
+				element.addEventListener('mouseleave', () => {
+					element.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
+				});
+			});
+
+			// Parallax effect for floating orbs
+			window.addEventListener('scroll', () => {
+				const scrolled = window.pageYOffset;
+				document.querySelectorAll('.floating-orb').forEach((orb, index) => {
+					const speed = 0.5 + (index * 0.1);
+					orb.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.1}deg)`;
+				});
+			});
+
+			// Language switching functionality
+			let currentLang = 'en'; // Start with English as default
+			const langPl = document.getElementById('lang-pl');
+			const langEn = document.getElementById('lang-en');
+			
+			const translations = {
+				en: {
+					hero: {
+						title: "Junior Full‑Stack Developer",
+						subtitle: "Frontend / Full‑Stack",
+						description: "Practical experience across React, TypeScript, Tailwind CSS, and Laravel/C# ecosystems. I enjoy building usable, performant UIs and clean, scalable systems.",
+						cta1: "View Projects",
+						cta2: "Get in touch"
+					},
+					about: {
+						title: "About",
+						description: "I'm a software developer with hands‑on experience in full‑stack development, automation, and user‑centered design. I love turning complex problems into elegant solutions and believe great software comes from understanding both the technical and human sides of development. When I'm not coding, you'll find me exploring new technologies, working on my fantasy worldbuilding or getting lost in search of a perfect afternoon indie track :)"
+					},
+					skills: {
+						title: "Skills",
+						description: "Technologies I use regularly and tools I'm comfortable with."
+					},
+					showcase: {
+						creative: "CREATIVE",
+						creativeDesc: "Exploring the intersection of technology and art through innovative web experiences.",
+						technical: "TECHNICAL", 
+						technicalDesc: "Building robust, scalable solutions with modern frameworks and clean architecture.",
+						innovative: "INNOVATIVE",
+						innovativeDesc: "Pushing boundaries with experimental interfaces and cutting-edge technologies.",
+						future: "FUTURE",
+						futureDesc: "Shaping tomorrow's digital landscape through thoughtful design and engineering."
+					},
+					experience: {
+						title: "Experience",
+						intern: "Full‑Stack Developer Intern, TEMcompany",
+						internYear: "2025",
+						internDesc: "Contributed to migrating a large‑scale desktop app from Windows Forms to Avalonia; helped modernize codebases and improve cross‑platform compatibility. Experience with C#, .NET, MVVM, Git, and Agile workflows.",
+						warehouse: "Warehouse Worker, REMA1000",
+						warehouseYears: "2023 — 2024",
+						warehouseDesc: "Fast‑paced, multicultural logistics environment. Strengthened teamwork, communication, and time‑management; developed appreciation for efficiency and process optimization."
+					},
+					projects: {
+						title: "Projects",
+						growmate: "GrowMate — Smart Greenhouse Monitoring",
+						growmateTech: "React • TypeScript • Tailwind",
+						growmateDesc: "Responsive dashboard for monitoring temperature, humidity, and soil data in real time. Built with React, TypeScript, Tailwind CSS, and CI/CD pipelines; integrated with RESTful APIs.",
+						koi: "Koi — Local Network File Transfer (In Development)",
+						koiTech: "Tauri • Rust • Svelte",
+						koiDesc: "Lightweight desktop app for secure, fast file transfers over local networks. Exploring local‑first architecture, privacy, and performance.",
+						electrikar: "Electrikar — Eco‑Friendly Fleet Management",
+						electrikarTech: "C# • Java • PostgreSQL",
+						electrikarDesc: "3‑tier system for managing electric vehicle fleets with dual‑server architecture, client interfaces, and reliable data flow.",
+						learn2learn: "Learn2Learn — Student Productivity Tracker",
+						learn2learnTech: "React • TypeScript • Laravel",
+						learn2learnDesc: "Hackathon‑built full‑stack web app to help students organize notes and habits; designed with clean architecture with future AI‑driven insights."
+					},
+					education: {
+						title: "Education",
+						degree: "Software Technology Engineering (BEng) — VIA University College, Denmark",
+						years: "2023 — 2025, September",
+						description: "Focus: Full‑Stack Development, DevOps (CI/CD, Docker), Clean Architecture & SOLID, Data Structures & Algorithms, Databases (PostgreSQL/MySQL), and Introductory Machine Learning."
+					},
+					languages: {
+						title: "Languages",
+						polish: "Polish — Native",
+						english: "English — C1 (Fluent)",
+						danish: "Danish — Beginner (Learning)"
+					},
+					hobbies: {
+						title: "Hobbies",
+						description: "Photography, music, gaming, and writing — particularly worldbuilding for fantasy settings. Inspired by nature and architecture, which I emphasize in my writing."
+					},
+					contact: {
+						title: "Let's work together",
+						description: "Open to opportunities. Feel free to reach out.",
+						email: "Email",
+						download: "Download CV"
+					}
+				},
+				pl: {
+					hero: {
+						title: "Junior Full‑Stack Developer",
+						subtitle: "Frontend / Full‑Stack",
+						description: "Praktyczne doświadczenie w ekosystemach React, TypeScript, Tailwind CSS oraz Laravel/C#. Lubię tworzyć użyteczne, wydajne interfejsy i czyste, skalowalne systemy.",
+						cta1: "Zobacz projekty",
+						cta2: "Skontaktuj się"
+					},
+					about: {
+						title: "O mnie",
+						description: "Jestem programistą z praktycznym doświadczeniem w rozwoju full‑stack, automatyzacji i projektowaniu zorientowanym na użytkownika. Uwielbiam przekształcać złożone problemy w eleganckie rozwiązania i wierzę, że świetne oprogramowanie powstaje dzięki zrozumieniu zarówno technicznych, jak i ludzkich aspektów rozwoju. Gdy nie koduję, znajdziesz mnie eksplorującego nowe technologie, pracującego nad moim fantasy worldbuildingiem lub zagubionego w poszukiwaniu idealnego popołudniowego indie tracka :)"
+					},
+					skills: {
+						title: "Umiejętności",
+						description: "Technologie, których regularnie używam i narzędzia, z którymi czuję się komfortowo."
+					},
+					showcase: {
+						creative: "KREATYWNOŚĆ",
+						creativeDesc: "Eksploruję przecięcie technologii i sztuki poprzez innowacyjne doświadczenia webowe.",
+						technical: "TECHNICZNY", 
+						technicalDesc: "Buduję solidne, skalowalne rozwiązania z nowoczesnymi frameworkami i czystą architekturą.",
+						innovative: "INNOWACYJNY",
+						innovativeDesc: "Przekraczam granice eksperymentalnymi interfejsami i najnowszymi technologiami.",
+						future: "PRZYSZŁOŚĆ",
+						futureDesc: "Kształtuję jutrzejszy krajobraz cyfrowy poprzez przemyślane projektowanie i inżynierię."
+					},
+					experience: {
+						title: "Doświadczenie",
+						intern: "Stażysta Full‑Stack Developer, TEMcompany",
+						internYear: "2025",
+						internDesc: "Współtworzyłem migrację dużej aplikacji desktopowej z Windows Forms do Avalonia; pomagałem modernizować codebase'y i poprawiać kompatybilność międzyplatformową. Doświadczenie z C#, .NET, MVVM, Git i metodologiami Agile.",
+						warehouse: "Pracownik magazynu, REMA1000",
+						warehouseYears: "2023 — 2024",
+						warehouseDesc: "Szybkie, wielokulturowe środowisko logistyczne. Wzmocniłem umiejętności pracy zespołowej, komunikacji i zarządzania czasem; rozwinąłem docenienie dla efektywności i optymalizacji procesów."
+					},
+					projects: {
+						title: "Projekty",
+						growmate: "GrowMate — Inteligentny monitoring szklarni",
+						growmateTech: "React • TypeScript • Tailwind",
+						growmateDesc: "Responsywny dashboard do monitorowania temperatury, wilgotności i danych glebowych w czasie rzeczywistym. Zbudowany z React, TypeScript, Tailwind CSS i pipeline'ami CI/CD; zintegrowany z RESTful API.",
+						koi: "Koi — Transfer plików w sieci lokalnej (W rozwoju)",
+						koiTech: "Tauri • Rust • Svelte",
+						koiDesc: "Lekka aplikacja desktopowa do bezpiecznego, szybkiego transferu plików w sieciach lokalnych. Eksploruję architekturę local-first, prywatność i wydajność.",
+						electrikar: "Electrikar — Zarządzanie ekologiczną flotą",
+						electrikarTech: "C# • Java • PostgreSQL",
+						electrikarDesc: "System 3-warstwowy do zarządzania flotą pojazdów elektrycznych z architekturą dual-server, interfejsami klienckimi i niezawodnym przepływem danych.",
+						learn2learn: "Learn2Learn — Tracker produktywności studentów",
+						learn2learnTech: "React • TypeScript • Laravel",
+						learn2learnDesc: "Full-stack aplikacja webowa z hackathonu pomagająca studentom organizować notatki i nawyki; zaprojektowana z czystą architekturą z przyszłymi AI-driven insights."
+					},
+					education: {
+						title: "Edukacja",
+						degree: "Inżynieria Technologii Oprogramowania (BEng) — VIA University College, Dania",
+						years: "2023 — 2025, Wrzesień",
+						description: "Fokus: Rozwój Full‑Stack, DevOps (CI/CD, Docker), Czysta Architektura & SOLID, Struktury Danych & Algorytmy, Bazy Danych (PostgreSQL/MySQL) i Wprowadzenie do Machine Learning."
+					},
+					languages: {
+						title: "Języki",
+						polish: "Polski — Ojczysty",
+						english: "Angielski — C1 (Biegły)",
+						danish: "Duński — Początkujący (Uczę się)"
+					},
+					hobbies: {
+						title: "Zainteresowania",
+						description: "Fotografia, muzyka, gry i pisanie — szczególnie worldbuilding dla fantasy. Inspiruje mnie natura i architektura, co podkreślam w moim pisaniu."
+					},
+					contact: {
+						title: "Współpracujmy",
+						description: "Otwarty na możliwości. Śmiało się odezwij.",
+						email: "Email",
+						download: "Pobierz CV"
+					}
+				}
+			};
+
+			function updateLanguage(lang) {
+				currentLang = lang;
+				
+				// Update toggle button states
+				if (lang === 'pl') {
+					langPl.className = 'text-sm px-3 py-1.5 rounded-md transition-all duration-200 bg-white/20 text-white font-medium';
+					langEn.className = 'text-sm px-3 py-1.5 rounded-md transition-all duration-200 text-white/60 hover:text-white';
+				} else {
+					langPl.className = 'text-sm px-3 py-1.5 rounded-md transition-all duration-200 text-white/60 hover:text-white';
+					langEn.className = 'text-sm px-3 py-1.5 rounded-md transition-all duration-200 bg-white/20 text-white font-medium';
+				}
+				
+				// Update navigation
+				document.querySelectorAll('nav a[data-en]').forEach(link => {
+					link.textContent = link.getAttribute(`data-${lang}`);
+				});
+				
+				// Update hero section
+				const hero = translations[lang].hero;
+				document.querySelector('#hero p').textContent = hero.title;
+				document.querySelector('#hero h1 span').textContent = hero.subtitle;
+				document.querySelector('#hero p:last-of-type').textContent = hero.description;
+				document.querySelector('#hero .btn-primary').textContent = hero.cta1;
+				document.querySelector('#hero .btn-ghost').textContent = hero.cta2;
+				
+				// Update about section
+				const about = translations[lang].about;
+				document.querySelector('#about h2').textContent = about.title;
+				document.querySelector('#about .section-lead').textContent = about.description;
+				
+				// Update skills section
+				const skills = translations[lang].skills;
+				document.querySelector('#skills h2').textContent = skills.title;
+				document.querySelector('#skills .section-lead').textContent = skills.description;
+				
+				// Update showcase section
+				const showcase = translations[lang].showcase;
+				const glitchElements = document.querySelectorAll('.glitch-text');
+				if (glitchElements.length >= 4) {
+					glitchElements[0].textContent = showcase.creative;
+					glitchElements[0].setAttribute('data-text', showcase.creative);
+					glitchElements[1].textContent = showcase.technical;
+					glitchElements[1].setAttribute('data-text', showcase.technical);
+					glitchElements[2].textContent = showcase.innovative;
+					glitchElements[2].setAttribute('data-text', showcase.innovative);
+					glitchElements[3].textContent = showcase.future;
+					glitchElements[3].setAttribute('data-text', showcase.future);
+				}
+				
+				// Update showcase panel descriptions
+				const showcasePanels = document.querySelectorAll('.sideways-panel p');
+				if (showcasePanels.length >= 4) {
+					showcasePanels[0].textContent = showcase.creativeDesc;
+					showcasePanels[1].textContent = showcase.technicalDesc;
+					showcasePanels[2].textContent = showcase.innovativeDesc;
+					showcasePanels[3].textContent = showcase.futureDesc;
+				}
+				
+				// Update experience section
+				const experience = translations[lang].experience;
+				document.querySelector('#experience h2').textContent = experience.title;
+				document.querySelector('#experience h3').textContent = experience.intern;
+				document.querySelector('#experience p:first-of-type').textContent = experience.internYear;
+				document.querySelector('#experience p:last-of-type').textContent = experience.internDesc;
+				
+				// Update projects section
+				const projects = translations[lang].projects;
+				document.querySelector('#projects h2').textContent = projects.title;
+				document.querySelectorAll('#projects h3')[0].textContent = projects.growmate;
+				document.querySelectorAll('#projects h3')[1].textContent = projects.koi;
+				document.querySelectorAll('#projects h3')[2].textContent = projects.electrikar;
+				document.querySelectorAll('#projects h3')[3].textContent = projects.learn2learn;
+				
+				// Update project descriptions
+				const projectDescriptions = document.querySelectorAll('#projects p');
+				if (projectDescriptions.length >= 4) {
+					projectDescriptions[0].textContent = projects.growmateDesc;
+					projectDescriptions[1].textContent = projects.koiDesc;
+					projectDescriptions[2].textContent = projects.electrikarDesc;
+					projectDescriptions[3].textContent = projects.learn2learnDesc;
+				}
+				
+				// Update education section
+				const education = translations[lang].education;
+				document.querySelector('#education h2').textContent = education.title;
+				document.querySelector('#education p:first-of-type').textContent = education.degree;
+				document.querySelector('#education p:nth-of-type(2)').textContent = education.years;
+				document.querySelector('#education p:last-of-type').textContent = education.description;
+				
+				// Update languages section
+				const languages = translations[lang].languages;
+				document.querySelector('#languages h2').textContent = languages.title;
+				document.querySelectorAll('#languages li')[0].textContent = languages.polish;
+				document.querySelectorAll('#languages li')[1].textContent = languages.english;
+				document.querySelectorAll('#languages li')[2].textContent = languages.danish;
+				
+				// Update hobbies section
+				const hobbies = translations[lang].hobbies;
+				document.querySelector('#hobbies h2').textContent = hobbies.title;
+				document.querySelector('#hobbies .section-lead').textContent = hobbies.description;
+				
+				// Update contact section
+				const contact = translations[lang].contact;
+				document.querySelector('#contact h2').textContent = contact.title;
+				document.querySelector('#contact .section-lead').textContent = contact.description;
+				document.querySelector('#contact .btn-primary').textContent = contact.email;
+				document.querySelector('#contact .btn-ghost').textContent = contact.download;
+				
+				// Update CV modal
+				document.querySelectorAll('#cv-modal [data-en]').forEach(element => {
+					element.textContent = element.getAttribute(`data-${lang}`);
+				});
+			}
+
+			langPl.addEventListener('click', () => {
+				updateLanguage('pl');
+			});
+			
+			langEn.addEventListener('click', () => {
+				updateLanguage('en');
+			});
+			
+			// Initialize with English as default
+			updateLanguage('en');
+		</script>
+
+		<!-- CV Download Modal -->
+		<dialog id="cv-modal" class="backdrop:bg-black/50 backdrop:backdrop-blur-sm bg-white/10 border border-white/20 rounded-xl p-6 max-w-md mx-auto my-auto">
+			<div class="text-center">
+				<h3 class="text-xl font-semibold mb-4 text-white" data-en="Download CV" data-pl="Pobierz CV">Download CV</h3>
+				<p class="text-white/70 mb-6" data-en="Choose your preferred language:" data-pl="Wybierz preferowany język:">Choose your preferred language:</p>
+				<div class="flex flex-col gap-3">
+					<a href="/nCV.pdf" download="Mateusz_Samborski_CV_English.pdf" class="btn-primary w-full" data-en="English CV" data-pl="CV po angielsku">English CV</a>
+					<a href="/PLnCV.pdf" download="Mateusz_Samborski_CV_Polish.pdf" class="btn-ghost w-full" data-en="Polish CV" data-pl="CV po polsku">Polish CV</a>
+				</div>
+				<button onclick="document.getElementById('cv-modal').close()" class="mt-4 text-white/60 hover:text-white transition-colors" data-en="Cancel" data-pl="Anuluj">Cancel</button>
+			</div>
+		</dialog>
+
+		<script type="application/ld+json" is:inline>{JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Person",
+			name: "Mateusz Samborski",
+			url: "https://msamborski.dev/",
+			jobTitle: "Junior Full-Stack Developer",
+			email: "msamborski04@gmail.com",
+			address: { addressLocality: "Toruń", addressCountry: "PL" },
+			knowsAbout: ["React","TypeScript","JavaScript","TailwindCSS","Astro","C#","Java","Laravel","Docker","PostgreSQL","MySQL"],
+		})}</script>
+	</body>
+</html>
