@@ -26,7 +26,7 @@
 
 /* Buttons */
 .btn-primary {
-  @apply inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2 font-medium text-black shadow/30 shadow-white/10 transition hover:bg-white/90;
+  @apply inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2 font-medium text-black shadow-lg transition hover:bg-white/90;
 }
 .btn-ghost {
   @apply inline-flex items-center gap-2 rounded-lg bg-white/0 px-4 py-2 font-medium text-white ring-1 ring-white/20 transition hover:bg-white/10;
