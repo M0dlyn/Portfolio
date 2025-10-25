@@ -23,8 +23,8 @@ A modern, responsive portfolio website built with Astro, featuring a bilingual i
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/portfolio.git
-cd portfolio
+git clone https://github.com/M0dlyn/Portfolio.git
+cd Portfolio
 ```
 
 2. Install dependencies:
@@ -34,16 +34,27 @@ npm install
 pnpm install
 ```
 
-3. Start the development server:
+3. Install Astro (if not already installed):
+```bash
+# Option 1: Install globally
+npm install -g astro
+
+# Option 2: Use npx (recommended - no global installation needed)
+# npx will automatically download and use the latest Astro
+```
+
+4. Start the development server:
 ```bash
 npx astro dev
-# or
+# or if installed globally
+astro dev
+# or using npm scripts
 npm run dev
 # or
 pnpm dev
 ```
 
-4. Open [http://localhost:4321](http://localhost:4321) in your browser.
+5. Open [http://localhost:4321](http://localhost:4321) in your browser.
 
 ## 🏗️ Build
 
@@ -51,7 +62,9 @@ To build the project for production:
 
 ```bash
 npx astro build
-# or
+# or if installed globally
+astro build
+# or using npm scripts
 npm run build
 # or
 pnpm build
