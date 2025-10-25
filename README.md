@@ -36,6 +36,8 @@ pnpm install
 
 3. Start the development server:
 ```bash
+npx astro dev
+# or
 npm run dev
 # or
 pnpm dev
@@ -48,6 +50,8 @@ pnpm dev
 To build the project for production:
 
 ```bash
+npx astro build
+# or
 npm run build
 # or
 pnpm build
