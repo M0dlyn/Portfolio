@@ -227,7 +227,7 @@ import { Code2, Type, FileText, Palette, Globe, Zap, Rocket, Circle, Hash, Coffe
 			<section id="projects" class="section">
 				<h2 class="section-title reveal">Projects</h2>
 				<div class="reveal mt-8 grid gap-4 sm:grid-cols-2">
-					<a href="#" class="card group avant-garde">
+					<a href="https://github.com/SEP4-2025/frontend-sep4" target="_blank" rel="noopener noreferrer" class="card group avant-garde">
 						<div class="aspect-video rounded-xl bg-white/5 ring-1 ring-white/10 group-hover:ring-white/20 transition relative overflow-hidden">
 							<div class="floating-orb w-8 h-8 top-2 right-2"></div>
 							<div class="morphing-shape w-12 h-12 bottom-2 left-2"></div>
@@ -238,7 +238,7 @@ import { Code2, Type, FileText, Palette, Globe, Zap, Rocket, Circle, Hash, Coffe
 						</div>
 						<p class="mt-2 text-white/80">Responsive dashboard for monitoring temperature, humidity, and soil data in real time. Built with React, TypeScript, Tailwind CSS, and CI/CD pipelines; integrated with RESTful APIs.</p>
 					</a>
-					<a href="#" class="card group avant-garde">
+					<button onclick="document.getElementById('koi-modal').showModal()" class="card group avant-garde text-left">
 						<div class="aspect-video rounded-xl bg-white/5 ring-1 ring-white/10 group-hover:ring-white/20 transition relative overflow-hidden">
 							<div class="floating-orb w-8 h-8 top-2 right-2"></div>
 							<div class="morphing-shape w-12 h-12 bottom-2 left-2"></div>
@@ -248,8 +248,8 @@ import { Code2, Type, FileText, Palette, Globe, Zap, Rocket, Circle, Hash, Coffe
 							<span class="text-xs text-white/60">Tauri • Rust • Svelte</span>
 						</div>
 						<p class="mt-2 text-white/80">Lightweight desktop app for secure, fast file transfers over local networks. Exploring local‑first architecture, privacy, and performance.</p>
-					</a>
-					<a href="#" class="card group avant-garde">
+					</button>
+					<a href="https://github.com/PlamenMichev/electrikar" target="_blank" rel="noopener noreferrer" class="card group avant-garde">
 						<div class="aspect-video rounded-xl bg-white/5 ring-1 ring-white/10 group-hover:ring-white/20 transition relative overflow-hidden">
 							<div class="floating-orb w-8 h-8 top-2 right-2"></div>
 							<div class="morphing-shape w-12 h-12 bottom-2 left-2"></div>
@@ -260,7 +260,7 @@ import { Code2, Type, FileText, Palette, Globe, Zap, Rocket, Circle, Hash, Coffe
 						</div>
 						<p class="mt-2 text-white/80">3‑tier system for managing electric vehicle fleets with dual‑server architecture, client interfaces, and reliable data flow.</p>
 					</a>
-					<a href="#" class="card group avant-garde">
+					<a href="https://github.com/GaijinSociety/Learn2Learn" target="_blank" rel="noopener noreferrer" class="card group avant-garde">
 						<div class="aspect-video rounded-xl bg-white/5 ring-1 ring-white/10 group-hover:ring-white/20 transition relative overflow-hidden">
 							<div class="floating-orb w-8 h-8 top-2 right-2"></div>
 							<div class="morphing-shape w-12 h-12 bottom-2 left-2"></div>
@@ -466,6 +466,11 @@ import { Code2, Type, FileText, Palette, Globe, Zap, Rocket, Circle, Hash, Coffe
 						description: "Open to opportunities. Feel free to reach out.",
 						email: "Email",
 						download: "Download CV"
+					},
+					koiModal: {
+						title: "Repository Private",
+						description: "The Koi project repository is currently set to private and not publicly accessible. This is a personal project in development.",
+						button: "Understood"
 					}
 				},
 				pl: {
@@ -539,6 +544,11 @@ import { Code2, Type, FileText, Palette, Globe, Zap, Rocket, Circle, Hash, Coffe
 						description: "Otwarty na możliwości. Śmiało się odezwij.",
 						email: "Email",
 						download: "Pobierz CV"
+					},
+					koiModal: {
+						title: "Repozytorium Prywatne",
+						description: "Repozytorium projektu Koi jest obecnie ustawione jako prywatne i nie jest publicznie dostępne. To jest projekt osobisty w trakcie rozwoju.",
+						button: "Rozumiem"
 					}
 				}
 			};
@@ -655,6 +665,12 @@ import { Code2, Type, FileText, Palette, Globe, Zap, Rocket, Circle, Hash, Coffe
 				document.querySelectorAll('#cv-modal [data-en]').forEach(element => {
 					element.textContent = element.getAttribute(`data-${lang}`);
 				});
+				
+				// Update Koi modal
+				const koiModal = translations[lang].koiModal;
+				document.querySelector('#koi-modal h3').textContent = koiModal.title;
+				document.querySelector('#koi-modal p').textContent = koiModal.description;
+				document.querySelector('#koi-modal button').textContent = koiModal.button;
 			}
 
 			langPl.addEventListener('click', () => {
@@ -695,6 +711,15 @@ import { Code2, Type, FileText, Palette, Globe, Zap, Rocket, Circle, Hash, Coffe
 					<a href="/PLnCV.pdf" download="Mateusz_Samborski_CV_Polish.pdf" class="btn-ghost w-full" data-en="Polish CV" data-pl="CV po polsku">Polish CV</a>
 				</div>
 				<button onclick="document.getElementById('cv-modal').close()" class="mt-4 text-white/60 hover:text-white transition-colors" data-en="Cancel" data-pl="Anuluj">Cancel</button>
+			</div>
+		</dialog>
+
+		<!-- Koi Private Repository Modal -->
+		<dialog id="koi-modal" class="backdrop:bg-black/50 backdrop:backdrop-blur-sm bg-white/10 border border-white/20 rounded-xl p-6 max-w-md mx-auto my-auto">
+			<div class="text-center">
+				<h3 class="text-xl font-semibold mb-4 text-white" data-en="Repository Private" data-pl="Repozytorium Prywatne">Repository Private</h3>
+				<p class="text-white/70 mb-6" data-en="The Koi project repository is currently set to private and not publicly accessible. This is a personal project in development." data-pl="Repozytorium projektu Koi jest obecnie ustawione jako prywatne i nie jest publicznie dostępne. To jest projekt osobisty w trakcie rozwoju.">The Koi project repository is currently set to private and not publicly accessible. This is a personal project in development.</p>
+				<button onclick="document.getElementById('koi-modal').close()" class="btn-primary w-full" data-en="Understood" data-pl="Rozumiem">Understood</button>
 			</div>
 		</dialog>
 
