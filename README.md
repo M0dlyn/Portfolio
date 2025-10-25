@@ -102,8 +102,8 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 📧 Contact
 
 - **Email**: msamborski04@gmail.com
-- **Website**: [msamborski.dev](https://msamborski.dev)
-- **LinkedIn**: [Your LinkedIn Profile]
+- **Website**: [mateuszportfolio](https://mateuszportfolio.vercel.app/)
+- **LinkedIn**: [https://www.linkedin.com/in/mateusz-samborski-a5493b289/]
 
 ---
 
